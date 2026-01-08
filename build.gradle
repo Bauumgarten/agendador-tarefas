@@ -38,6 +38,21 @@ dependencies {
     runtimeOnly("io.jsonwebtoken:jjwt-impl:0.13.0")
     runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.13.0")
 
+        // MapStruct (Apenas a API)
+        implementation "org.mapstruct:mapstruct:1.6.3"
+
+        // Lombok
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+
+        // Processadores de Anotação (A ordem aqui importa!)
+        // Este cara faz o meio de campo entre Lombok e MapStruct
+        annotationProcessor "org.projectlombok:lombok-mapstruct-binding:0.2.0"
+        // Este cara é quem realmente gera a classe TarefaConverterImpl
+        annotationProcessor "org.mapstruct:mapstruct-processor:1.6.3"
+
+
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
